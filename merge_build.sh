@@ -189,7 +189,7 @@ DOWNLOAD_APK() {
         # 普通APK模式下载逻辑
         APK_FILENAME="${GAME_SERVER}.apk"
         echo "正在下载APK..."
-        curl -L -o "${DOWNLOAD_DIR}/${APK_FILENAME}" "${APK_URL}"
+        curl -L -o "${DOWNLOAD_DIR}/${APK_FILENAME}" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" -e "https://game.bilibili.com/blhx/" "${APK_URL}"
         if [ $? -ne 0 ]; then
             echo "APK下载失败"
             exit 1
