@@ -75,7 +75,7 @@ DOWNLOAD_APKEEP() {
         exit 1
     fi
 
-    curl -L -o "${DOWNLOAD_DIR}/${FILENAME}" "${DOWNLOAD_LINK}"
+    curl -L -o "${DOWNLOAD_DIR}/${APK_FILENAME}" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" -e "https://game.bilibili.com/blhx/" "${APK_URL}"
     if [ $? -eq 0 ]; then
         echo "Apkeep下载成功！文件保存至：${DOWNLOAD_DIR}/${FILENAME}"
         chmod +x "${DOWNLOAD_DIR}/${FILENAME}"
